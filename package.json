@@ -1,17 +1,23 @@
 {
   "name": "uniltorb-maybe",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "main": "dist/index.js",
   "umd:main": "dist/uniltorb-maybe.umd.production.js",
   "module": "dist/uniltorb-maybe.es.production.js",
   "typings": "dist/index.d.ts",
+  "repository": "timer/uniltorb-maybe",
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "files": [
     "dist"
   ],
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
-    "test": "tsdx test"
+    "test": "tsdx test --coverage",
+    "release": "np",
+    "prepack": "yarn build"
   },
   "husky": {
     "hooks": {
@@ -24,12 +30,25 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
+  "dependencies": {
+    "first-chunk-stream": "^2.0.0",
+    "iltorb": "^2.4.3",
+    "peek-stream": "^1.1.3",
+    "pumpify": "^1.5.1",
+    "through2": "^3.0.1"
+  },
   "devDependencies": {
+    "@types/iltorb": "^2.3.0",
     "@types/jest": "^24.0.12",
+    "@types/pumpify": "^1.4.1",
+    "@types/through2": "^2.0.34",
     "husky": "^2.1.0",
+    "np": "^5.0.1",
     "prettier": "^1.17.0",
     "pretty-quick": "^1.10.0",
+    "stream-to-array": "^2.3.0",
     "tsdx": "^0.5.4",
-    "typescript": "^3.4.5"
+    "typescript": "^3.4.5",
+    "wrap-stream": "^2.0.0"
   }
 }
